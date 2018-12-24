@@ -1,20 +1,15 @@
 package com.capita.demo.capita.utils;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import com.capita.demo.capita.util.Validator;
 
 public class ValidatorTest {
 
-	@Test
-	public static void validateNumberOfTestcases()
+	@Test(expected=NumberFormatException.class)
+	public void validateNumberOfTest()
 	{
 		Validator.isValidNumberOfTests("asd");
 	}
 
-//	@Test
-//	public static validateEachTest()
-//	{
-//		
-//	}
 }
