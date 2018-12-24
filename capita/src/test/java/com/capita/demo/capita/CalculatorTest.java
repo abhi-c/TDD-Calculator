@@ -8,7 +8,6 @@ class CalculatorTest {
 
 	@Test
 	void readNumberOfTests() {
-//		Calculator cal = new Calculator(1, "asd", "xsd");
 		fail("Not yet implemented");
 	}
 
