@@ -12,13 +12,13 @@ public class ValidatorTest {
 	@Test(expected=NumberFormatException.class)
 	public void validateStrNumberOfTest()
 	{
-		Validator.isValidNumber("asd");
+		Validator.getValidNumber("asd");
 	}
 
 	@Test
 	public void validateIntNumberOfTest()
 	{
-		int ret = Validator.isValidNumber("12");
+		int ret = Validator.getValidNumber("12");
 		assertEquals(12, ret);
 	}
 	
@@ -38,6 +38,6 @@ public class ValidatorTest {
 	@Test(expected=IllegalArgumentException.class)
 	public void inValidateOperator()
 	{
-		Validator.isValidNumber("asd");
+		Validator.getValidNumber("asd");
 	}
 }

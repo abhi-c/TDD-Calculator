@@ -18,7 +18,7 @@ public class App
         Scanner scanner = new Scanner(new InputStreamReader(System.in));
         System.out.println("How many expressions you want to solve?");
         String no = scanner.nextLine();
-        for(int i=0; i<Validator.isValidNumber(no);i++)
+        for(int i=0; i<Validator.getValidNumber(no);i++)
         {
         	System.out.println("Please enter your expression: ");
             String expression = scanner.nextLine();
