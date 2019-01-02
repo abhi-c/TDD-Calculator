@@ -7,21 +7,42 @@ import org.junit.Test;
 public class CalculatorTest {
 
 	@Test
-	public final void test() {
+	public final void basicTest() {
 		Calculator cal = new Calculator();
-		double 
+		String 
 		
-		ret = cal.evaluateExpression("4 * 5");
-		assertEquals(20.0 + "", ret + "");
+		ret = cal.convertToPostFixExpression("4 * 5");
+		assertEquals("[4, 5, *]", ret);
 
-		ret = cal.evaluateExpression("4 + 5");
-		assertEquals(9.0 + "", ret + "");
+		ret = cal.convertToPostFixExpression("4 + 5");
+		assertEquals("[4, 5, +]", ret);
 		
-		ret = cal.evaluateExpression("40 / 5");
-		assertEquals(8.0 + "", ret + "");
+		ret = cal.convertToPostFixExpression("40 / 50");
+		assertEquals("[40, 50, /]", ret);
 
-		ret = cal.evaluateExpression("4 - 5");
-		assertEquals(-1.0 + "", ret + "");
+		ret = cal.convertToPostFixExpression("4 - 5");
+		assertEquals("[4, 5, -]", ret);
 	}
+	
+	@Test
+	public final void multiOperatorTest() {
+		Calculator cal = new Calculator();
+		String 
+		
+		ret = cal.convertToPostFixExpression("4 * 5 + 75 - 35");
+		assertEquals("[4, 5, *, 75, +, 35, -]", ret);
+		cal.resolveExpression();
 
+		/*ret = cal.convertToPostFixExpression("4 + 5 * 1");
+		assertEquals("[4, 5, 1, *, +]", ret);
+		
+		ret = cal.convertToPostFixExpression("2 - 40 / 50 + 1");
+		assertEquals("[2, 40, 50, /, -, 1, +]", ret);
+
+		ret = cal.convertToPostFixExpression("5 * 6 / 21");
+		assertEquals("[5, 6, *, 21, /]", ret);
+		
+		ret = cal.convertToPostFixExpression("4 * 5 + 75");
+		assertEquals("[4, 5, *, 75, +]", ret);*/
+	}
 }

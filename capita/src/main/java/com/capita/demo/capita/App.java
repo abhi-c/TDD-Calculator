@@ -22,7 +22,8 @@ public class App
         {
         	System.out.println("Please enter your expression: ");
             String expression = scanner.nextLine();
-            Calculator.evaluateExpression(expression);
+            Calculator cal = new Calculator();
+            String postfix = cal.convertToPostFixExpression(expression);
         }
         scanner.close();
       }
